@@ -1,3 +1,5 @@
+from models import books
+
 # validaciones
 def validation_update():
     try: 
@@ -11,15 +13,15 @@ def validation_update():
     except ValueError:
         print("Error, try again")
         return validation_update()
-def validacion_nombre_libro():
+    
+def validation_book_name():
     books_name = input("Enter Name of the book: ")
     if books_name.strip().replace(" ", "").isalpha():
         return books_name
     else:
-        return validacion_nombre_libro()
-    
+        return validation_book_name()
 
-def validacion_año_libro():
+def validation_book_year():
         try:
             book_year = int(input("Enter Name of the year of the book: "))
             if 0 <= book_year <= 2026: 
@@ -28,16 +30,16 @@ def validacion_año_libro():
                 print("invalid option")
         except ValueError:
             print("invalid option")
-            return validacion_año_libro()       
+            return validation_book_year()       
 
-def validacion_autor_libro():
+def validation_book_author():
     autor = input(" Enter name of the author: ")
     if autor.strip().replace(" ", "").isalpha():
         return autor
     else:
-        return validacion_autor_libro()
+        return validation_book_author()
 
-def validacion_opcion_menu():
+def validation_menu_option():
     try:
         opcion_menu = int(input("Ingresa una opcion en el menu: "))
         if  0 <= opcion_menu <= 6:
@@ -46,5 +48,5 @@ def validacion_opcion_menu():
             print("Wrong option")
     except ValueError:
         print("Wrong option")
-        return validacion_opcion_menu()
+        return validation_menu_option()
 
