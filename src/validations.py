@@ -13,6 +13,19 @@ def validation_update():
     except ValueError:
         print("Error, try again")
         return validation_update()
+
+def validation_erase():
+    try: 
+        selected_book= int(input("\nWhich book do you want to erase (select the number): "))
+        if 0 < selected_book <= len(books):
+            return selected_book
+        else: 
+            print("\nError, try again")
+            return validation_update()
+        
+    except ValueError:
+        print("Error, try again")
+        return validation_update()
     
 def validation_book_name():
     books_name = input("Enter Name of the book: ")

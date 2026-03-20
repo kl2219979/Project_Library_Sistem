@@ -1,5 +1,5 @@
 from models import books
-from validations import validation_update, validation_book_name, validation_book_year, validation_book_author, validation_status
+from validations import validation_update, validation_book_name, validation_book_year, validation_book_author, validation_status, validation_erase
 # Funciones 
 
 def register_book():
@@ -73,7 +73,7 @@ def book_status():
 def erase_book():
     while True:
         show_books()
-        eliminate=int(input("What book want to eliminate?: "))
+        eliminate= validation_erase()
         books.pop(eliminate-1)
         print("The new list is: ")
         show_books()
