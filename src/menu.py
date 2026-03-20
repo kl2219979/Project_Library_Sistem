@@ -1,30 +1,46 @@
+from services import register_book, show_books, update_book, book_status, erase_book
+from validations import validation_menu_option
+from models import books
 # Menu
 
 def menu():
     while True:
         print("Menu options: ")
-        print("1 . Agregar")
-        print("2 . Listar")
-        print("3 . Actualizar")
-        print("4 . Eliminar")
-        print("5 . Disponibilidad")
-        print("6 . Salir")
-        entrada_opcion = int(input("Escoge una opcion: "))
+        print("1 . Add book")
+        print("2 . List books")
+        print("3 . Update book")
+        print("4 . Delete book")
+        print("5 . Update book status")
+        print("6 . Exit")
+        entrada_opcion = validation_menu_option()
         match entrada_opcion:
             case 1: 
-                print("agregar")
+                book = register_book()
+                books.append(book)
             case 2: 
-                print("Listar")
+                if not books:
+                    print("You dont have any book")
+                else:
+                    show_books()
             case 3: 
-                print("Actualizar")
+                if not books:
+                    print("You dont have any book")
+                else:
+                    update_book()
             case 4: 
-                print("Eliminar")
+                if not books:
+                    print("You dont have any book")
+                else:
+                    erase_book()
             case 5: 
-                print("Disponibilidad")
+                if not books:
+                    print("You dont have any book")
+                else:
+                    book_status()
             case 6: 
-                print("Saliendo")
+                print("Thank you for using our library system, see you later!")
                 break
             case _:
-                print("Eliga una opcion correcta")
-menu()
+                print("Wrong option, try again")
+
     
