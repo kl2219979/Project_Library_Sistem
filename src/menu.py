@@ -4,6 +4,7 @@ from models import books
 # Menu
 
 def menu():
+    print("\n\t|||--HI! WELCOME TO THE LIBRARY--|||")
     while True:
         print("Menu options: ")
         print("1 . Add book")
