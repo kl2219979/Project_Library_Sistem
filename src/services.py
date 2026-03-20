@@ -3,7 +3,7 @@
 def erase_book():
 
     
-        for i,j in enumerate(books,start=1):
+        for i,book in enumerate(books,start=1):
             print (f"{i}- {books['book']} | {books['year']} | {books['author']}")
 
         while True:
@@ -15,7 +15,7 @@ def erase_book():
             
             
             if not books:
-                print("No hay libros xd")
+                print("You dont have any book")
                 break
             else:
                 eliminate_another=(input("Eliminate another book? y/n: ")).lower()
